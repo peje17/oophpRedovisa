@@ -31,8 +31,8 @@ class Page implements /* PageRenderInterface, */ InjectionAwareInterface
 
         // Add static assets
         $data["favicon"] = "favicon.ico";
-        $data["stylesheets"] = ["css/style.css"];
-        $data["javascripts"] = ["js/main.js"];
+        $data["stylesheets"] = ["../vendor/twbs/bootstrap/dist/css/bootstrap.min.css", "css/style.css"];
+        $data["javascripts"] = ["../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js", "js/main.js"];
 
         // Add views for common header, navbar and footer
         $view->add("header/oophp/default", $data, "header");

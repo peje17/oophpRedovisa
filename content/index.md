@@ -1,21 +1,17 @@
 ---
-title: "My title"
+title: "Peter Jensen"
 ...
-Min me-sida i kursen oophp
-=========================
+Peters me-sida i kursen oophp
+=============================
 
-[FIGURE src="image/me.jpg?w=500" caption="Bild på mig"]
+[FIGURE src="image/peter.png?w=500" caption="Peter och Bianca"]
 
-Detta är min me-sida i kursen. Denna sidan innehåller en presentation av mig själv. Underhåll denna sidan under hela kursen och uppdatera den efter hand och behov.
+Jag är Peter Vecht Jensen – en Dansk som sedan 20 år tillbaka levar i Järna straks utanför Stockholm.
 
-Så, en presentation en bra början. Skriv några ord om dig själv. Jag börjar.
+Det var frugans jobb som 1997 förde oss till Stockholm, och nu 20 år senare är vi så förtjusta i Sverige att vi nog aldrig vänder hem igen. Vi har dock en stuga i Småland där vi löpande träffas med våra familj och vänner från Danmark.
 
-Mitt namn är Mikael Roos. Född och uppvuxen i Bankeryd, Småland, strax utanför Jönköping, i ett villaområde som byggdes upp samtidigt som vi flyttade in där. Jag gillade landhockey och har spelat bandy och hockey samt gått bowlinggymnasiet i Nässjö. Jag har varit städare, diskare, kallskänka, servitör och kock. På ett bananskal landade jag i Ronneby när jag började högskolan 1990 där och nu är jag kvar med fru, barn och så vidare.
+Jag jobbar inom IT- avdelningen på SEB Kort som är ett dotterbolag till SEB (SE Banken). Efter att i många år ha jobbet med IBM AS/400, har jag nu ändrat inriktning till Windows SQL Server och utveckling i C# / .Net.
 
-Programmering har alltid intresserat mig sedan 13-årsåldern och min första dator var en Spectravideo 328 med bandspelare.
+Intresset för WEB utveckling började när vi startade upp vår hund-kennel (uppfödning av rasen Whippet). Man måste ju ha en hemsida, och för att kunna utveckla den måste man ju lära sig mer om WEB utveckling. Vår hemsida finns här www.magiccolour.se
 
-Om jag skall nämna någon hobby, förutom webbprogrammering, så får det bli att bära sten på sommarstugetomten, och det finns sten så det räcker och blir över.
-
-Till och från får jag för mig att börja på lite hobbies, ett år satsade jag på pokerspel, ett annat år var det geocaching och sedan turfing. Nu ligger jag lågt med hobbies, men något kanske dyker upp...?
-
-Vi syns och hörs i forum och chatt!
+Min stora hobby har alla år varit sport i lite olika tappningar (mest fotboll förstås). Nu när jag har passerat 50-strecket, är det Golf som gäller, och under sommarhalvåret kör jag så mycket det går på Kallfors Golfklubb.
