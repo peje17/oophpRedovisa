@@ -12,3 +12,4 @@ namespace Anax\View;
 ?>
 
 <p>&copy; Copyright 2018 Peter Jensen </p>
+<a href="../doc/api/index.html" target="_blank" class="btn btn-light" role="button">Anax Documentation</a> 

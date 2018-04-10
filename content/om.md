@@ -13,3 +13,5 @@ Denna webbplatsen är en del av kursen [oophp](https://dbwebb.se/kurser/oophp).
 Länka till [dbwebb kursrepot på GitHub](https://github.com/dbwebb-se/oophp).
 
 Länka till [Peters repo för me/redovisa på GitHub](https://github.com/peje17/oophpRedovisa).
+
+[Anax Dokumentation](../doc/api/index.html)

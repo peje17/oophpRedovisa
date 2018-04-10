@@ -4,7 +4,7 @@ title: "Peter Jensen"
 Peters me-sida i kursen oophp
 =============================
 
-[FIGURE src="image/peter.png?w=500" caption="Peter och Bianca"]
+[FIGURE src="image/Peter.png?w=500" caption="Peter och Bianca"]
 
 Jag är Peter Vecht Jensen – en Dansk som sedan 20 år tillbaka levar i Järna straks utanför Stockholm.
 
