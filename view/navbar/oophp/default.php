@@ -28,6 +28,7 @@ namespace Anax\View;
         <a class="nav-item nav-link <?= basename($_SERVER['PHP_SELF']) == "index.php" ? "active" : ""; ?>" href="<?= url("") ?>">Hem</a>
         <a class="nav-item nav-link <?= basename($_SERVER['PHP_SELF']) == "redovisning" ? "active" : ""; ?>" href="<?= url("redovisning") ?>">Redovisning</a>
         <a class="nav-item nav-link <?= basename($_SERVER['PHP_SELF']) == "om" ? "active" : ""; ?>" href="<?= url("om") ?>">Om</a>
+        <a class="nav-item nav-link <?= basename($_SERVER['PHP_SELF']) == "gissa" ? "active" : ""; ?>" href="<?= url("gissa") ?>">Gissa</a>
         <a class="nav-item nav-link <?= basename($_SERVER['PHP_SELF']) == "lek" ? "active" : ""; ?>" href="<?= url("lek") ?>">Lek</a>
         <a class="nav-item nav-link <?= basename($_SERVER['PHP_SELF']) == "debug" ? "active" : ""; ?>" href="<?= url("debug") ?>">Debug</a>
     </div>

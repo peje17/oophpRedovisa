@@ -1,0 +1,113 @@
+<?php
+/**
+ * Guess game specific routes.
+ */
+
+ session_name('guessSession');
+ session_start();
+
+/**
+ * Guess my number with GET
+ */
+$app->router->get("guess/get", function () use ($app) {
+
+    $data = ["title" => "Play guess my number (GET)"];
+
+    $number = $_GET["number"] ?? -1;
+    $tries = $_GET["tries"] ?? 6;
+    $guess = $_GET["guess"] ?? null;
+
+    $game = new peje17\Guess\Guess($number, $tries);
+
+    if (isset($_GET["reset"])) {
+        $game->random();
+    }
+
+    $res = null;
+    if (isset($_GET["btnGuess"])  && $number > 0 && $tries > 0) {
+        $res = $game->makeGuess($guess);
+    }
+
+    $data["game"]  =  $game;
+    $data["guess"]  =  $guess;
+    $data["res"]  =  $res;
+    $data["number"]  =  $number;
+
+    $app->view->add("guess/get", $data);
+    $app->page->render($data);
+});
+
+
+
+/**
+ * Guess my number with POST
+ */
+$app->router->any(["GET", "POST"], "guess/post", function () use ($app) {
+
+    $data = ["title" => "Play guess my number (POST)"];
+
+    $number = (isset($_POST["number"]) && !isset($_POST["btnReset"])) ? $_POST["number"] : -1;
+    $tries =  (isset($_POST["tries"])  && !isset($_POST["btnReset"])) ? $_POST["tries"]  :  6;
+    $guess =  $_POST["guess"]  ?? null;
+
+    $game = new peje17\Guess\Guess($number, $tries);
+
+    if (isset($_POST["btnReset"])) {
+        $game->random();
+    }
+
+    $res = null;
+    if (isset($_POST["btnGuess"]) && $number > 0 && $tries > 0) {
+        $res = $game->makeGuess($guess);
+    }
+
+    $data["game"]  =  $game;
+    $data["guess"]  =  $guess;
+    $data["res"]  =  $res;
+    $data["number"]  =  $number;
+
+    $app->view->add("guess/post", $data);
+    $app->page->render($data);
+});
+
+
+
+/**
+ * Guess my number with SESSION
+ */
+$app->router->any(["GET", "POST"], "guess/session", function () use ($app) {
+
+    $data = ["title" => "Play guess my number (Session)",];
+
+    // Game input
+    $_SESSION["number"] = $_SESSION["number"] ?? -1;
+    $_SESSION["tries"] = $_SESSION["tries"] ?? 6;
+    $guess = $_POST["guess"] ?? null;
+
+    // Game action
+    if (!isset($game)) {
+        $game = new peje17\Guess\Guess($_SESSION["number"], $_SESSION["tries"]);
+    }
+
+    if (isset($_POST["btnReset"])) {
+        $game->random();
+        $_SESSION["number"] = $game->number();
+        $_SESSION["tries"] = 6;
+    }
+
+    $res = null;
+    if (isset($_POST["btnGuess"]) && $_SESSION["number"] > 0) {
+        if ($_SESSION["tries"] > 0) {
+            $res = $game->makeGuess($guess);
+            $_SESSION["tries"] = ($game->tries() > 0)? $game->tries() : 0;
+        }
+    }
+
+    $data["game"]  =  $game;
+    $data["guess"]  =  $guess;
+    $data["res"]  =  $res;
+    $data["number"]  =  $_SESSION["number"];
+
+    $app->view->add("guess/session", $data);
+    $app->page->render($data);
+});
