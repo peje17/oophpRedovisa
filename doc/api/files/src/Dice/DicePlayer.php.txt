@@ -1,0 +1,117 @@
+<?php
+namespace peje17\Dice;
+
+/**
+ * A dice player
+ */
+
+class DicePlayer
+{
+    /**
+     * @var string $name  palayer name
+     * @var hand players hand of dices
+     * @var int $score - player score
+     * @var graphics dice grafic
+     */
+    protected $name;
+    protected $hand;
+    protected $score;
+    protected $graphics;
+
+    /**
+     * Constructor to initiate the diceplayer
+     *
+     * @param string name of player
+     * @param int sides Number of dices to create, defaults to five.
+     */
+    public function __construct(string $name, int $dices = 1)
+    {
+        $this->name  = $name;
+        $this->hand  = new DiceHand($dices);
+        $this->score = 0;
+        $this->graphics = [];
+    }
+
+
+    /**
+     * Return hand
+     *
+     * @return hand - players hand
+     */
+    public function hand()
+    {
+        return $this->hand;
+    }
+
+    /**
+     * Return graphic of dice
+     *
+     * @return graphic dices
+     */
+    public function graphics()
+    {
+        return $this->graphics;
+    }
+
+    /**
+     * Return value of score
+     *
+     * @return int score
+     */
+    public function score()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Return Name
+     *
+     * @return string name
+     */
+    public function name()
+    {
+        return $this->name;
+    }
+
+
+
+    /**
+     * Init function
+     *
+     * @return void
+     */
+    public function init()
+    {
+        $this->score = 0;
+        $this->hand->init();
+        $this->graphics = [];
+    }
+}
+
+/**
+ * Roll all dices save their value.
+ *
+ * @return void.
+ */
+public function roll()
+{
+    $this->hand->roll();
+    $this->graphics = array_merge($this->graphics, $this->hand->graphic());
+    $this->updatescore($this->hand->values());
+    return ($this->hand->values());
+}
+
+/**
+ * Update player score
+ *
+ * @return void.
+ */
+public function updatescore(array $values)
+{
+    if (in_array(1, $values)) {
+        $this->score = 0;
+    } else {
+        $this->score += array_sum($values);
+    }
+}
+

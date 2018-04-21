@@ -1,0 +1,129 @@
+<?php
+namespace peje17\Dice;
+
+/**
+ * A dicehand, consisting of dices.
+ */
+
+class DiceHand
+{
+    /**
+     * @var int $dices   Integer consisting of dices.
+     * @var int $values  Integer consisting of last roll of the dices.
+     */
+    private $dices;
+    private $values;
+    private $graphic;
+
+    /**
+     * Constructor to initiate the dicehand with a number of dices.
+     *
+     * @param int sides Number of dices to create, defaults to five.
+     */
+    public function __construct(int $dices = 5)
+    {
+        $this->dices  = [];
+        $this->values = [];
+        $this->graphic = [];
+
+        for ($i = 0; $i < $dices; $i++) {
+            $this->dices[$i]  = new Dice($i+1);
+            $this->init();
+        }
+    }
+
+    /**
+     * Roll all dices save their value.
+     *
+     * @return void.
+     */
+    public function roll()
+    {
+        $i = 0;
+        foreach ($this->dices as $dice) {
+            $this->values[$i] = $dice->rolldice();
+            $this->graphic[$i] = $dice->graphic();
+            $i++;
+        }
+    }
+
+    /**
+     * Get values of dices from last roll.
+     *
+     * @return array with values of the last roll.
+     */
+    public function values()
+    {
+        return $this->values;
+    }
+
+    /**
+     * Get values of dices from last roll.
+     *
+     * @return array with values of the last roll.
+     */
+    public function graphic()
+    {
+        return $this->graphic;
+    }
+
+    /**
+     * Get values of dices from last roll.
+     *
+     * @return array with values of the last roll.
+     */
+    public function dices()
+    {
+        return $this->dices;
+    }
+
+    /**
+     * Get the sum of all dices.
+     *
+     * @return int as the sum of all dices.
+     */
+    public function sum()
+    {
+        return array_sum($this->values);
+    }
+
+    /**
+     * Get the average of all dices.
+     *
+     * @return float as the average of all dices.
+     */
+    public function average()
+    {
+        return number_format((array_sum($this->values)/count($this->values)), 2);
+    }
+
+    /**
+     * Initialize all dices
+     *
+     * @return float as the average of all dices.
+     */
+    public function init()
+    {
+        $i = 0;
+        foreach ($this->dices as $dice) {
+            $this->values[$i] = null;
+            $this->graphic[$i] = null;
+            $i++;
+        }
+    }
+
+    /**
+     * Roll all dices save their value.
+     *
+     * @return void.
+     */
+    public function roll()
+    {
+        $i = 0;
+        foreach ($this->dices as $dice) {
+            $this->values[$i] = $dice->rolldice();
+            $this->graphic[$i] = $dice->graphic();
+            $i++;
+        }
+    }
+}

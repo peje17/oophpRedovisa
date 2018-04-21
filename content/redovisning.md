@@ -26,7 +26,23 @@ Att byta PC skapar problem!
 Kmom02
 -------------------------
 
-Här är redovisningstexten
+##### Hur gick det att överföra spelet “Gissa mitt nummer” in i din me-sida?
+Det gick egentligen bra. Inga större problem, och det kändes logisk att placera ut de olika filer i tillsvarande folders i ramverket.
+
+##### Berätta om hur du löste uppgiften med Tärningsspelet 100, hur du tänkte, planerade och utförde uppgiften samt hur du organiserade din kod?
+Att göra denna uppgift tog mycket lång tid. Att börja rita i något okänt rit-verktyg kändes inget bra, så från början tänkte jag endast ut vilka klassar som behövdes. Game och player kändes naturligt tillsammans med hand och tärning som vi hade skapat sedan tidigare. Sedan var jag osäker på om man borde ha en rond och även en autoplayer. Autoplayer skapade jag så småningom men inte ronden… det var nog ett misstag.
+Jag jobbar ju dagligen i Visual Studio och C#, och att skapa klassar etc. känns naturligt. Hur man placera logik i route och view är kanske lite mer okänd mark, men jag följde de exempel som fanns sedan tidigare.
+
+##### Berätta om din syn på modellering likt UML jämfört med verktyg som phpDocumentor. Fördelar, nackdelar, användningsområde? Vad tycker du om konceptet make doc?
+Jag använde draw.io, som var helt nytt för mig, men som jag tycker fungera utmärkt. Jag gillar att rita lösningar, men tycker att MySql Workbench är snäppet bättra en de verktyg som presenterades i detta kursmoment.
+Make doc är egentligen otrolig häftig – att med ett knapptryck skapa vettig dokumentation för ett helt projekt är ju faktisk mycket tilltalande. Det jag dock i efterhand konstaterar är att det är otroligt viktigt att man skriver vettiga kommentarer i programmet, annars blir dokumentationen bara en fancy presentation av något oanvändbart.
+
+##### Hur känns det att skriva kod utanför och inuti ramverket, ser du fördelar och nackdelar med de olika sätten?
+Jag har ju insett vitsen med att ha ett CMS ramverk, men som jag har skrivit tidigare är jag inte riktig kompis med dessa ramverk. Jag har svårt att få in sammanhangen mellan alla filer och saknar någon mer övergripande beskrivning av tankarna bakom dessa ramverk… och det gör jag fortfarande.
+
+##### Vilken är din TIL för detta kmom?
+Att BTH inte har koll på en rimlig storlek på en veckouppgift i en 7,5 poängs kurs… de agera fortfarande som det var en 15 poängs kurs.
+
 
 
 
