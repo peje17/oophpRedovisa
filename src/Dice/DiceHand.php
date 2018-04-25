@@ -33,21 +33,6 @@ class DiceHand
     }
 
     /**
-     * Roll all dices save their value.
-     *
-     * @return void.
-     */
-    public function roll()
-    {
-        $i = 0;
-        foreach ($this->dices as $dice) {
-            $this->values[$i] = $dice->rolldice();
-            $this->graphic[$i] = $dice->graphic();
-            $i++;
-        }
-    }
-
-    /**
      * Get values of dices from last roll.
      *
      * @return array with values of the last roll.

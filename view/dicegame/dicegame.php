@@ -72,14 +72,18 @@ namespace Anax\View;
     </div>
 
     <hr />
-    <div class="col-12 ">
-        <form class="" method="POST" >
-            <fieldset class="form-group col-12 row" <?= ($_SESSION["game"]->status() == true) ? "" : "disabled" ?>>
+    <div class="col-12">
+        <form class="form-inline" method="POST" >
+
+            <fieldset class="form-group row col-12 " <?= ($_SESSION["game"]->status() == true) ? "" : "disabled" ?>>
+                <div class="row">
                 <div class="col-sm-3"><input type="submit" class="btn btn-outline-dark btn-sm "name="btnRoll" value="Roll the dices" <?= $btnRollStatus ?? " " ?>></div>
-                <div class="col-sm-3 "><input type="submit" class="btn btn-dark btn-sm "name="btnStop" value="Stop rolling" <?= $btnStopStatus ?? " " ?>></div>
-                <div class="col-sm-2 offset-sm-4"><input type="submit" class="btn btn-warning btn-sm "name="btnRound" value="Next Round" <?= $btnRoundStatus ?? " " ?>></div>
+                <div class="col-sm-3"><input type="submit" class="btn btn-dark btn-sm "name="btnStop" value="Stop rolling" <?= $btnStopStatus ?? " " ?>></div>
+                <div class="col-sm-3 col-sm-offset-2"><input type="submit" class="btn btn-warning btn-sm "name="btnRound" value="Next Round" <?= $btnRoundStatus ?? " " ?>></div>
+                </div>
             </fieldset>
-            <fieldset class="form-group col-12 row" <?= ($_SESSION["game"]->status()) ? "disabled" : "" ?>>
+
+            <fieldset class="form-group  row col-12" <?= ($_SESSION["game"]->status()) ? "disabled" : "" ?>>
                 <div class="col-sm-2 offset-sm-10"><input type="submit" class="btn btn-danger btn-sm "name="btnNew" value="New Game"></div>
             </fieldset>
         </form>

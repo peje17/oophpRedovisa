@@ -86,32 +86,32 @@ class DicePlayer
         $this->hand->init();
         $this->graphics = [];
     }
-}
 
-/**
- * Roll all dices save their value.
- *
- * @return void.
- */
-public function roll()
-{
-    $this->hand->roll();
-    $this->graphics = array_merge($this->graphics, $this->hand->graphic());
-    $this->updatescore($this->hand->values());
-    return ($this->hand->values());
-}
+    /**
+     * Roll all dices save their value.
+     *
+     * @return void.
+     */
+    public function roll()
+    {
+        $this->hand->roll();
+        $this->graphics = array_merge($this->graphics, $this->hand->graphic());
+        $this->updatescore($this->hand->values());
+        return ($this->hand->values());
+    }
 
-/**
- * Update player score
- *
- * @return void.
- */
-public function updatescore(array $values)
-{
-    if (in_array(1, $values)) {
-        $this->score = 0;
-    } else {
-        $this->score += array_sum($values);
+    /**
+     * Update player score
+     *
+     * @return void.
+     */
+    public function updatescore(array $values)
+    {
+        if (in_array(1, $values)) {
+            $this->score = 0;
+        } else {
+            $this->score += array_sum($values);
+        }
     }
 }
 

@@ -49,8 +49,24 @@ Att BTH inte har koll på en rimlig storlek på en veckouppgift i en 7,5 poängs
 Kmom03
 -------------------------
 
-Här är redovisningstexten
+##### Har du tidigare erfarenheter av att skriva kod som testar annan kod?
+Jag har tidigare gått ett unit-test kursmoment i en c# kurs. Då var detta med unit-test helt nytt för mig, och jag blev positivt överraskat att det går att automatisk testa sin kod (det finns vist inte på stordatorn).
 
+##### Hur ser du på begreppen enhetstestning och att skriva testbar kod?
+Jag är mycket positiv till detta. Inser ju att detta kan ha stor betydelse för de lösningar man skapar och hur förvaltningsbare de blir långsiktigt. Ingen tvekan att din lösning blir båda billigare och bättra i längden, om du implementerar en genomtänkt automatisk test.
+På jobbet diskutera man mycket contingues delivery, och en förutsättning för detta är förstås automatisk testande. I dag där vi skickar ut releaser kanske var annan månad, är det enormt påfrestande vid varje release, och det sker ju tyvärr lite för ofta att något blir fel. Jag tror definitivt att CI skulle vara ett stort steg framåt för bättra applikationer - och i detta koncept ingår som sagt test som ett nyckelmoment.
+
+##### Förklara kort begreppen white/grey/black box testing samt positiva och negativa tester, med dina egna ord.
+Blackbox testning är när du tester utan att egentligen känna till den exakta kod som exekverar – du tester en vis funktion för korrekt resultat. En utifrån och in metod där man tar utgångspunkt i användaren och den önskade funktionalitet.
+Whitebox testning tar utgångspunkt i att man ser koden, och medvetet bestämmer vilka path i koden man tester (förhoppningsvis alla). Ett typisk inifrån och ut testande där utgångspunkten är själva koden.
+Greybox testning är en typ av blackbox testning, där man som tester har kunskap om delar av testenheten (t.ex. datastrukturer och algoritmer). Man använder sin kunskap vid planeringen och utförande av testerna.
+Positive tester är när man tester att en enhet fungera korrekt med korrekt input. I Negative tester försöker man att föda enheten med felaktig input och testa att den även hantera detta på ett korrekt sätt.
+
+##### Hur gick det att genomföra uppgifterna med enhetstester, använde du egna klasser som bas för din testning?
+Det gick bra att göra uppgifterna inga större problem. Jag använda mig av de klasser som var med i exempel koden.
+
+##### Vilken är din TIL för detta kmom?
+Testning och speciellt automattestning fungerar även i PHP
 
 
 Kmom04
