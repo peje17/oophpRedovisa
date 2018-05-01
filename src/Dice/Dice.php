@@ -9,7 +9,7 @@ class Dice
     /**
      * @var integer $dicevalue value of dice
      */
-    private $dicesides;
+    protected $dicesides;
 
 
     /**
@@ -23,7 +23,7 @@ class Dice
      */
     public function __construct(int $sides = 6)
     {
-        $this->dicesides = $sides;
+        $this->dicesides = 6;
     }
 
     /**

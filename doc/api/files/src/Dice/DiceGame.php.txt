@@ -171,7 +171,8 @@ class DiceGame
      */
     public function autoplay()
     {
-        $values = $this->autoplayer->autoroll();
+        $autoplayerLead = ($this->autoplayertotal - $this->playertotal) / ($this->autoplayertotal + 0.001);
+        $values = $this->autoplayer->autoroll($autoplayerLead);
         $graphics = $this->autoplayer->graphics();
         $this->autoplayerhand .= implode(' ', $graphics) . ' ';
         $this->playertotal += $this->player->score();

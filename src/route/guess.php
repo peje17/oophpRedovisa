@@ -3,8 +3,8 @@
  * Guess game specific routes.
  */
 
- session_name('guessSession');
- session_start();
+ // session_name('guessSession');
+ // session_start();
 
 /**
  * Guess my number with GET

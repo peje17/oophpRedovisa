@@ -8,14 +8,18 @@ namespace peje17\Dice;
 class DiceAutoPlayer extends DicePlayer
 {
     /**
-     * Auto roll the dices - no of roll depending on number of dices
+     * Auto roll the dices - no of roll depending on number of dices and the lead of the game
      *
      * @return void.
      */
-    public function autoroll()
+    public function autoroll($autoplayerLead)
     {
-        $dices = count($this->hand->dices());
-        for ($i=0; $i < floor(6/$dices); $i++) {
+        $noOfRolls = floor(6/count($this->hand->dices()));
+        if ($autoplayerLead < 0.10) {
+            $noOfRolls++;
+        }
+
+        for ($i=0; $i < $noOfRolls; $i++) {
             $this->hand->roll();
             $this->graphics = array_merge($this->graphics, $this->hand->graphic());
             $this->updatescore($this->hand->values());

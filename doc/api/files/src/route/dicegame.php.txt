@@ -1,47 +1,76 @@
 <?php
+
 /**
  * Dice game specific routes.
  */
 
 
 /**
- * Dice gameT
+ * Dice game GET
  */
-$app->router->any(["GET", "POST"], "dicegame/dicegame", function () use ($app) {
 
-    $data = ["title" => "Dice game"];
+$app->router->get("dicegame", function () use ($app) {
+    $data = [
+        "title"     => "Dice game Start Ä",
+        "action"    => "dicegame/reset",
+        "method"    => "post",
+    ];
 
-    /**
-     * Start a new game
-     */
-    if (!isset($_SESSION["game"]) && isset($_POST["btnStartGame"])) {
-        $_SESSION["game"] = new peje17\Dice\DiceGame($_POST["playerName"], $_POST["numberOfDices"]);
-        $data["btnRollStatus"] = "";
-        $data["btnStopStatus"] = "Disabled";
-        $data["btnRoundStatus"] = "Disabled";
-    }
+    $app->view->add("dicegame/dicegameStart", $data);
+    $app->page->render($data);
+});
+
+
+
+/**
+ * Dice game restart
+ */
+$app->router->post("dicegame/reset", function () use ($app) {
+    $dices = $app->request->getPost("numberOfDices");
+    $player = $app->request->getPost("playerName");
+    $game  = new peje17\Dice\DiceGame($player, $dices);
+
+    $data["btnRollStatus"] = "";
+    $data["btnStopStatus"] = "Disabled";
+    $data["btnRoundStatus"] = "Disabled";
+
+    $app->session->set("game", $game);
+    $app->response->redirect("dicegame/play");
+});
+
+
+
+/**
+ * Dice game play
+ */
+$app->router->any(["GET", "POST"], "dicegame/play", function () use ($app) {
+    $data = [
+        "title"     => "Dice game Play",
+        "action"    => "dicegame/play",
+        "method"    => "post",
+    ];
+    $game = $app->session->get("game");
 
     /**
      * Control the button roll action
      */
-    if (isset($_POST["btnRoll"])) {
-        $_SESSION["game"]->playerroll();
-        $data["playergraphic"] = implode(' ', $_SESSION["game"]->player()->graphics()) . ' ';
-        $data["playerscore"]  = $_SESSION["game"]->player()->score();
-        $data["autoplayervalues"] = $_SESSION["game"]->autoplayerhand();
-        $data["autoplayerscore"]  = $_SESSION["game"]->autoplayer()->score();
-        $data["btnRollStatus"] = (($_SESSION["game"])->activeround()) ? "" : "Disabled";
-        $data["btnStopStatus"] = (($_SESSION["game"])->activeround()) ? "" : "Disabled";
-        $data["btnRoundStatus"] = (($_SESSION["game"])->activeround()) ? "Disabled" : "";
-        $data["winner"]  = $_SESSION["game"]->winner();
+    if ($app->request->getPost("btnRoll")) {
+        $game->playerroll();
+        $data["playergraphic"] = implode(' ', $game->player()->graphics()) . ' ';
+        $data["playerscore"]  =$game->player()->score();
+        $data["autoplayervalues"] = $game->autoplayerhand();
+        $data["autoplayerscore"]  = $game->autoplayer()->score();
+        $data["btnRollStatus"] = ($game->activeround()) ? "" : "Disabled";
+        $data["btnStopStatus"] = ($game->activeround()) ? "" : "Disabled";
+        $data["btnRoundStatus"] = ($game->activeround()) ? "Disabled" : "";
+        $data["winner"]  = $game->winner();
     }
 
     /**
      * Control the start new round button
      */
-    if (isset($_POST["btnRound"])) {
-        $_SESSION["game"]->gameround();
-
+    if ($app->request->getPost("btnRound")) {
+        $game->gameround();
         $data["playerscore"]  = 0;
         $data["autoplayervalues"] = '';
         $data["autoplayerscore"]  = 0;
@@ -53,13 +82,13 @@ $app->router->any(["GET", "POST"], "dicegame/dicegame", function () use ($app) {
     /**
      * Control the stop roll button
      */
-    if (isset($_POST["btnStop"])) {
-        $_SESSION["game"]->autoplay();
-        $data["playergraphic"] = implode(' ', $_SESSION["game"]->player()->graphics()) . ' ';
-        $data["playerscore"]  = $_SESSION["game"]->player()->score();
-        $data["autoplayervalues"] = $_SESSION["game"]->autoplayerhand();
-        $data["autoplayerscore"]  = $_SESSION["game"]->autoplayer()->score();
-        $data["winner"]  = $_SESSION["game"]->winner();
+    if ($app->request->getPost("btnStop")) {
+        $game->autoplay();
+        $data["playergraphic"] = implode(' ', $game->player()->graphics()) . ' ';
+        $data["playerscore"]  = $game->player()->score();
+        $data["autoplayervalues"] = $game->autoplayerhand();
+        $data["autoplayerscore"]  = $game->autoplayer()->score();
+        $data["winner"]  = $game->winner();
         $data["btnRollStatus"] = "Disabled";
         $data["btnStopStatus"] = "Disabled";
         $data["btnRoundStatus"] = "";
@@ -68,14 +97,19 @@ $app->router->any(["GET", "POST"], "dicegame/dicegame", function () use ($app) {
     /**
      * Handle the new button action
      */
-    if (isset($_POST["btnNew"])) {
-        unset($_SESSION["game"]);
+    if ($app->request->getPost("btnNew")) {
+        $app->session->set("game", null);
+        $data = [
+            "title"     => "Dice game Start",
+            "action"    => "dicegame/reset",
+            "method"    => "post",
+        ];
+        $app->view->add("dicegame/dicegameStart", $data);
+        $app->page->render($data);
+    } else {
+        $data["game"] = $game; 
+        $app->view->add("dicegame/play", $data);
+        $app->page->render($data);
     }
-
-    /**
-     * Render the page
-     */
-    $app->view->add("dicegame/dicegame", $data);
-    $app->page->render($data);
 });
 

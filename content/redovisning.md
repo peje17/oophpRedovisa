@@ -72,7 +72,23 @@ Testning och speciellt automattestning fungerar även i PHP
 Kmom04
 -------------------------
 
-Här är redovisningstexten
+##### Vilka är dina tankar och funderingar kring trait och interface?
+Interface är jag van med från c#, och det är ju till stor nytta i många projekt. Jag gillar tanken med interface, för att kunna skapa funktionalitet som kan användas utan beroende. När jag lästa om trait förste gången jämförde jag det med en statisk klass – men så är det ju inte helt. Jag tror det är en praktisk konstruktion för att dela gemensam kod, men den känns lite som en efterkonstruktion i språket.
+
+##### Hur gick det att skapa intelligensen och taktiken till tärningsspelet, hur gjorde du?
+Från början var jag inne på att man med historik skulle kunna bestämma en sannolikhet för framtida kast, men kom fram till samma konklusion som du: matematisk håller det inte.
+Efter att ha spelat spelet många gångar är min erfarenhet att man oftast kaster en gång för mycket. Därför är min utgångspunkt att antal kast styrs av antal tärningar. Sedan la jag på lite logik om spelaren var nära computerens score, för att trots allt skapa lite spänning.
+
+##### Några reflektioner från att integrera hårdare in i ramverkets klasser och struktur?
+Egentligen inte – när man jobbar i ett ramverk är det förstås logisk att använda ramverkets funktionalitet och då är det helt logisk att använda ramverksfunktionerna. Men när resultatet ändå är att det finns en sessions-variabel ser jag kanske inte den faktiska vinst.
+
+##### Berätta hur väl du lyckades med make test inuti ramverket och hur väl du lyckades att testa din kod med enhetstester och vilken kodtäckning du fick.
+Make test var missnöjd med ganska mycket, men vad jag kan läsa mig till är det mesta en del av ramverket.
+När man väl har gjort test för ett par klassar, blir det närmast tråkigt att skapa test för övriga klassar – tror min konklusion är att man bör skriva testerna samtidigt som man skapar klassarna. Sedan noterade jag att procenten inte helt följer det antal tester man har skapat (coverage blev faktisk grön ett par gångar mitt i testskapandet men gul till slut igen!).
+
+##### Vilken är din TIL för detta kmom?
+Att implementera en lösning in i ett ramverk är ganska svårt.
+
 
 
 

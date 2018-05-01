@@ -14,7 +14,7 @@ class DiceHand
     private $dices;
     private $values;
     private $graphic;
-
+    private $histogram;
     /**
      * Constructor to initiate the dicehand with a number of dices.
      *
@@ -27,9 +27,11 @@ class DiceHand
         $this->graphic = [];
 
         for ($i = 0; $i < $dices; $i++) {
-            $this->dices[$i]  = new Dice($i+1);
+            //$this->dices[$i]  = new Dice($i+1);
+            $this->dices[$i]  = new DiceHistogram2($i+1);
             $this->init();
         }
+        $this->histogram = new Histogram();
     }
 
     /**
@@ -60,6 +62,16 @@ class DiceHand
     public function dices()
     {
         return $this->dices;
+    }
+
+    /**
+     * Get values of dices from last roll.
+     *
+     * @return array with values of the last roll.
+     */
+    public function histogram()
+    {
+        return $this->histogram;
     }
 
     /**
@@ -106,8 +118,10 @@ class DiceHand
     {
         $i = 0;
         foreach ($this->dices as $dice) {
-            $this->values[$i] = $dice->rolldice();
+            $this->values[$i] = $dice->roll();
+            //$this->values[$i] = $dice->rolldice();
             $this->graphic[$i] = $dice->graphic();
+            $this->histogram->injectData($dice);
             $i++;
         }
     }
