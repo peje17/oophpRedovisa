@@ -15,12 +15,14 @@
         "anax/view": "^1.0",
         "mos/cimage": "^0.7.20",
         "symfony/yaml": "^3.3",
-        "twbs/bootstrap": "^4.0.0"
+        "twbs/bootstrap": "^4.0.0",
+        "anax/database": "^1.1"
     },
     "autoload": {
         "psr-4": {
             "Anax\\": "src/",
             "peje17\\": "src/"
-        }
+        },
+        "files": ["src/function.php"]
     }
 }

@@ -11,7 +11,7 @@
 
 $app->router->get("dicegame", function () use ($app) {
     $data = [
-        "title"     => "Dice game Start Ä",
+        "title"     => "Dice game Start",
         "action"    => "dicegame/reset",
         "method"    => "post",
     ];
@@ -107,7 +107,7 @@ $app->router->any(["GET", "POST"], "dicegame/play", function () use ($app) {
         $app->view->add("dicegame/dicegameStart", $data);
         $app->page->render($data);
     } else {
-        $data["game"] = $game; 
+        $data["game"] = $game;
         $app->view->add("dicegame/play", $data);
         $app->page->render($data);
     }

@@ -95,7 +95,19 @@ Att implementera en lösning in i ett ramverk är ganska svårt.
 Kmom05
 -------------------------
 
-Här är redovisningstexten
+##### Några reflektioner kring koden i övningen för PHP PDO och MySQL?
+Har tidigare använd PDO men egentligen inte riktigt förstått vad det var (trodde det var en del av PHP). Nu förstår jag bättra vad det är och det är ju riktig sjyst att ha ett gränssnitt som tar hand om den databas man vill koppla sig mot.
+
+##### Hur gick det att överföra koden in i ramverket, stötte du på några utmaningar?
+Det gick egentligen ganska bra utan de stora problem
+
+##### Berätta om din slutprodukt för filmdatabasen, gjorde du endast basfunktionaliteten eller lade du till extra features och hur tänkte du till kring användarvänligheten och din kodstruktur?
+Jag har endast skapat basfunktionaliteten – det har varit för mycket strul med att få kopplat mig mot databasen på servern för att ha tid för extrauppgifter.
+Jag hade tyvärr lite för bråttom i början, och därför tycker jag inte helt mitt gränssnitt hänger ihop – det borde kännas som en och samma sida för användare där sökfunktionerna borde vara en typ av filterfunktion. Så blev det tyvärr inte då jag kom igång lite för snabbt.
+
+##### Vilken är din TIL för detta kmom?
+Använd längre tid på planering, och börja inte skriva kod förrän du verkligen har specificerat lösningen
+
 
 
 
