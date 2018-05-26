@@ -27,6 +27,19 @@ $app->router->get("lek/hello-world-wrap", function () use ($app) {
     ];
 
     $app->view->add("content/oophp/default", $data);
-
     $app->page->render($data);
 });
+
+
+
+/**
+* Showing message Hello World, rendered within the page layout.
+ */
+// $app->router->get("textfilter", function () use ($app) {
+//     $data = [
+//         "title" => "Text filtrering | oophp",
+//     ];
+//
+//     $app->view->add("textfilter/textfilter", $data);
+//     $app->page->render($data);
+// });

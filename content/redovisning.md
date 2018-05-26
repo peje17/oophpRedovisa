@@ -114,7 +114,21 @@ Använd längre tid på planering, och börja inte skriva kod förrän du verkli
 Kmom06
 -------------------------
 
-Här är redovisningstexten
+##### Hur gick det att jobba med klassen för filtrering och formatting av texten?
+Det tyckte jag gick bra – inga större problem annat än lurigheten med att man inte fick använda samma class namn (TextFilter) som redan används i Anax ramverket. Undra om det var en medveten klurighet?
+
+##### Berätta om din klasstruktur och kodstruktur för din lösning av webbsidor med innehåll i databasen.
+Denna lösningen är jag inte alls nöjd med. Jag tycker det känns konstigt att man måste skapa klasserna flera gångar för att få använda dem. Jag förstår nog inte helt hur Anax ramverket är byggd och varför en klass inte kan återanvändas senare i programmet.
+Sedan har jag stora problem att riktig förstå användningen av routes i ramverket – konsekvensen av GET/POST och RENDER/REDIRECT blir inte riktig klok på.
+Jag saknar att få presenterat vad som är best practice – hur skulle ett proff. Bygga denna lösningen. Nu bygger jag en lösning som fungerar, men jag har ärlig talet ingen aning om det är rätt sätt att bygga på – det förväntar jag mig när jag går kurser.
+
+##### Hur känner du rent allmänt för den koden du skrivit i din me/redovisa, vad är bra och mindre bra? Ser du potential till refactoring av din kod och/eller behov av stöd från ramverket?
+Det finns definitivt potential för refactoring – många delar är nog byggd lite för snabbt. Sedan känner jag inte jag helt förstår strukturen i ramverket, och då blir det lite konstiga lösningar ibland.
+Det som jag tror är bra är att jag följer den folderstruktur som ramverket kräver – och då blir det förstås lite bättra överblick.
+
+##### Vilken är din TIL för detta kmom?
+Att skriva text med någon typ av formateringskod är helt nytt för mig
+
 
 
 

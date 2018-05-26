@@ -11,4 +11,4 @@ namespace Anax\View;
 
 ?>
 
-<p>&copy; Copyright 2018 Peter Jensen </p>
+<div class="sticky-bottom"><p >&copy; Copyright 2018 Peter Jensen </p></div>
